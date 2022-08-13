@@ -1,0 +1,53 @@
+<html>
+
+    <head>
+        <title>Welcome To Homepage</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+
+<body>
+
+    <h1>Books Form</h1>
+    <!-- <hr>
+    <form action="{% url 'home' %}" method="post">
+        {% csrf_token %}
+        {% if single_book %}
+            Book Id = <input type="number" name="bid" value="{{single_book.id}}" readonly><br><br>
+        {% endif %}
+        <label>book name</label>
+        <input type="text" name="bname" value="{{single_book.name}}" placeholder="Enter Book Name"> <br><br>
+        book price = <input type="number" name="bprice" value="{{single_book.price}}" placeholder="Enter Book Price"><br><br>
+        book qty = <input type="number" name="bqty" value="{{single_book.qty}}" placeholder="Enter Book Qty"><br><br>
+        <input type="submit" value="ok">
+    </form> -->
+
+
+    <!-- <a href="{% url 'show_all_books' %}">show_books</a> -->
+
+    <form action="{% url 'home' %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3 mt-3">
+          <label class="form-label">Book Id:</label>
+          <input type="number" class="form-control"  name="bid" value="{{single_book.id}}" readonly>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">book name:</label>
+          <input type="text" class="form-control" placeholder="Enter name" name="bname" value="{{single_book.name}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">book price</label>
+            <input type="number" class="form-control" placeholder="Enter book price" name="bprice" value="{{single_book.price}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">book qty:</label>
+            <input type="number" class="form-control" placeholder="Enter book qty" name="bqty" value="{{single_book.qty}}">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <a href="{% url 'show_all_books' %}">show_books</a>
+
+
+
+</body>
+</html>
