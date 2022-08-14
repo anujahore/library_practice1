@@ -35,6 +35,9 @@ urlpatterns = [
 
     # class bases view practice
     path('cbv-home/', views.Home.as_view(), name='home'),
+
+
+    path('login-prack/', views.user_login, name='user_login'),
 ]
 
 
