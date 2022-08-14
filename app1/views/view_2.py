@@ -41,3 +41,8 @@ class Home(View):
     def delete(self, request):
         # print('in delete method')
         return HttpResponse('in delete method', status=204)
+
+
+def product_view(req):
+    print('in product view')
+    return HttpResponse('<h1>in product view</h1>')
