@@ -1,6 +1,7 @@
 
 from django.http import HttpResponse
 from django.views import View
+from django.contrib.auth import login, logout, authenticate
 
 def view_c(request):
     return HttpResponse('in view_c')
@@ -46,3 +47,16 @@ class Home(View):
 def product_view(req):
     print('in product view')
     return HttpResponse('<h1>in product view</h1>')
+
+
+# def anuja(req):
+#     return HttpResponse('jsncuishsiu')
+
+
+def user_login(req):
+    user_name = req.POST.get('username')
+    user_password = req.POST.get('password')
+    user = authenticate(user_name, user_password)
+    if user:
+        login(req, user)
+        return HttpResponse('<h1>Successfully logged in....!<h1>')

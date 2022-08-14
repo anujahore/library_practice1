@@ -38,6 +38,7 @@ urlpatterns = [
 
 
     path('product-view/', views.product_view, name='product_view'),
+    path('login-prack/', views.user_login, name='user_login'),
 ]
 
 
